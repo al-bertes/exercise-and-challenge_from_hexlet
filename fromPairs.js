@@ -11,7 +11,7 @@ const howManyRepiet = (world, arr) => {
     }
     return count;
   }
-  
+
   
   const countWords = (str) => {
     if (str.length === 0) {

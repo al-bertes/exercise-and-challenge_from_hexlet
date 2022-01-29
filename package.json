@@ -1,0 +1,23 @@
+{
+  "name": "exercise-challenge_from_hexlet",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "В текушем репозитории публикуются мои упражнения и испытания от образовательной платформы [Hexlet](https://ru.hexlet.io/).",
+  "main": "average.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/al-bertes/exercise-challenge_from_hexlet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/al-bertes/exercise-challenge_from_hexlet/issues"
+  },
+  "homepage": "https://github.com/al-bertes/exercise-challenge_from_hexlet#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
