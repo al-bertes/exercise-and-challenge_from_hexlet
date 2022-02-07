@@ -21,6 +21,7 @@ const make = (url) => {
     const host = url.split('//')[1].split('/')[0];
     let path = url.split('//')[1].split('/')[1].split('?')[0];
     path = '/' + path;
+    console.log(path)
     let param = url.split('//')[1].split('/')[1].split('?')[1].split('&')
         .reduce((acc, item) => {
             const arr = item.split('=');
@@ -29,6 +30,7 @@ const make = (url) => {
             acc[key] = val;
             return acc;
         }, {})
+        
     if (param.length === 0) {
         param = ''
     }
@@ -69,4 +71,7 @@ const toString = (data) => {
     return `${data.protocol}//${data.host}${data.path}?${getParam}`;
 }
 
+console.log(toString(make('http://hexlet.io/404?q=low&page=5')))
+
 export { make, setProtocol, getProtocol, setHost, getHost, setQueryParam, getQueryParam, getPath, setPath, toString };
+
