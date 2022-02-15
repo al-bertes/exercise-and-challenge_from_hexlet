@@ -14,25 +14,40 @@
 //         └── cli # директория
 //             └── LICENSE # файл
 
-import { mkdir, mkfile } from '@hexlet/immutable-fs-trees';
+import { mkdir, mkfile, getChildren, getName } from '@hexlet/immutable-fs-trees';
 
-// BEGIN (write your solution here)
+// // BEGIN (write your solution here)
 
-export default () => {
-  return mkdir('nodejs-package', [
-    mkfile('Makefile'),
-    mkfile('README.md'),
-    mkdir('dist'),
-    mkdir('__tests__', [
-      mkfile('half.test.js', { type: 'text/javascript' })
-    ]),
-    mkfile('babel.config.js', { type: 'text/javascript' }),
-    mkdir('node_modules', [
-      mkdir('@babel', [
-        mkdir('cli', [
-          mkfile('LICENSE')
-        ])
-      ])
-    ], { owner: 'root', hidden: false })
-  ], { hidden: true})
-}
+// const tree = () => {
+//   return mkdir('nodejs-package', [
+//     mkfile('Makefile'),
+//     mkfile('README.md'),
+//     mkdir('dist'),
+//     mkdir('__tests__', [
+//       mkfile('half.test.js', { type: 'text/javascript' })
+//     ]),
+//     mkfile('babel.config.js', { type: 'text/javascript' }),
+//     mkdir('node_modules', [
+//       mkdir('@babel', [
+//         mkdir('cli', [
+//           mkfile('LICENSE')
+//         ])
+//       ])
+//     ], { owner: 'root', hidden: false })
+//   ], { hidden: true})
+// }
+
+console.log(getName(tree))
+const tree = mkdir('/', [mkfile('hexlet.log')], { hidden: true });
+// getName(tree); // '/'
+// getMeta(tree).hidden; // true
+
+const [file] = getChildren(tree);
+console.log(getName(file)); // 'hexlet.log'
+
+// У файла нет метаданных
+getMeta(file).unknown; // undefined
+
+// А вот так делать не надо
+// У файлов нет детей
+getChildren(file);
