@@ -16,26 +16,26 @@
 
 import { mkdir, mkfile, getChildren, getName } from '@hexlet/immutable-fs-trees';
 
-// // BEGIN (write your solution here)
+// BEGIN (write your solution here)
 
-// const tree = () => {
-//   return mkdir('nodejs-package', [
-//     mkfile('Makefile'),
-//     mkfile('README.md'),
-//     mkdir('dist'),
-//     mkdir('__tests__', [
-//       mkfile('half.test.js', { type: 'text/javascript' })
-//     ]),
-//     mkfile('babel.config.js', { type: 'text/javascript' }),
-//     mkdir('node_modules', [
-//       mkdir('@babel', [
-//         mkdir('cli', [
-//           mkfile('LICENSE')
-//         ])
-//       ])
-//     ], { owner: 'root', hidden: false })
-//   ], { hidden: true})
-// }
+const tree = () => {
+  return mkdir('nodejs-package', [
+    mkfile('Makefile'),
+    mkfile('README.md'),
+    mkdir('dist'),
+    mkdir('__tests__', [
+      mkfile('half.test.js', { type: 'text/javascript' })
+    ]),
+    mkfile('babel.config.js', { type: 'text/javascript' }),
+    mkdir('node_modules', [
+      mkdir('@babel', [
+        mkdir('cli', [
+          mkfile('LICENSE')
+        ])
+      ])
+    ], { owner: 'root', hidden: false })
+  ], { hidden: true})
+}
 
 console.log(getName(tree))
 const tree = mkdir('/', [mkfile('hexlet.log')], { hidden: true });
