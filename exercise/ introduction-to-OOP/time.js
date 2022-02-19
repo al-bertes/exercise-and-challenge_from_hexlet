@@ -27,6 +27,8 @@ export default class Time {
       return `${this.hours}:${this.minutes}`;
     }
   }
-  const time = Time.fromString('10:23');
-  console.log(`The time is ${time}`); // => 'The time is 10:15'
+
+
+
+
   
