@@ -37,17 +37,3 @@ const tree = () => {
   ], { hidden: true})
 }
 
-console.log(getName(tree))
-const tree = mkdir('/', [mkfile('hexlet.log')], { hidden: true });
-// getName(tree); // '/'
-// getMeta(tree).hidden; // true
-
-const [file] = getChildren(tree);
-console.log(getName(file)); // 'hexlet.log'
-
-// У файла нет метаданных
-getMeta(file).unknown; // undefined
-
-// А вот так делать не надо
-// У файлов нет детей
-getChildren(file);
